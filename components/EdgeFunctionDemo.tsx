@@ -7,7 +7,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 export default function EdgeFunctionDemo() {
     const [name, setName] = useState('');
     const [loading, setLoading] = useState(false);
-    const [response, setResponse] = useState<any>(null);
+    const [response, setResponse] = useState<{ message: string; region: string; timestamp: string; latency: number } | null>(null);
     const [error, setError] = useState('');
 
     const callEdgeFunction = async () => {
@@ -26,6 +26,7 @@ export default function EdgeFunctionDemo() {
             const data = await res.json();
             setResponse({ ...data, latency });
         } catch (err) {
+            console.error(err);
             setError('Edge function not available in this demo. Deploy to Vercel to test!');
         } finally {
             setLoading(false);
@@ -46,7 +47,7 @@ export default function EdgeFunctionDemo() {
                 🚀 Live Edge Function Demo
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-                Test a real serverless edge function running on Vercel's global network. Enter your name and see the response!
+                Test a real serverless edge function running on Vercel&apos;s global network. Enter your name and see the response!
             </Typography>
 
             <Box sx={{ display: 'flex', gap: 2, mb: 3, flexWrap: 'wrap' }}>

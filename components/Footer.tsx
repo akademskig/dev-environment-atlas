@@ -37,11 +37,11 @@ export default function Footer() {
                         </Typography>
                     </Box>
 
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            <Link
-              href="https://github.com/akademskig/dev-environment-atlas"
-              target="_blank"
-              rel="noopener noreferrer"
+                    <Box sx={{ display: 'flex', gap: 2 }}>
+                        <Link
+                            href="https://github.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             sx={{
                                 color: 'text.secondary',
                                 transition: 'color 0.3s',
